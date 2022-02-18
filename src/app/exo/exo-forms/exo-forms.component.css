@@ -1,3 +1,22 @@
-.ng-touched{
+form{
+    background-color: rgb(141, 235, 141);
+}
+
+.ng-untouched{
+    background-color: rgb(70, 245, 70);
+}
+
+.ng-touched {
+    bac: blue;
+}
+
+.ng-pristine{
+    background-color: rgb(87, 233, 87);
+
+}
+
+
+
+#input-produit.ng-dirty{
     background-color: blue;
 }

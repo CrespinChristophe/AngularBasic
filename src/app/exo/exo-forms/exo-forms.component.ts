@@ -9,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ExoFormsComponent implements OnInit {
 
   form = new FormGroup({
-    'nom': new FormControl(),
-    'age': new FormControl()
+    'Produit': new FormControl(),
+    'Prix': new FormControl()
   });
 
   constructor() { }
