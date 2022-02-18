@@ -5,6 +5,7 @@ import { DemoCommuComponent } from '../demo/demo-commu/demo-commu.component';
 import { ChildTextComponent } from './child-text/child-text.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { ExoDirectivesComponent } from './exo-directives/exo-directives.component';
+import { ExoFormsComponent } from './exo-forms/exo-forms.component';
 import { ExoParentComponent } from './exo-parent/exo-parent.component';
 import { ExoComponent } from './exo.component';
 import { Exo1Component } from './exo1/exo1.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
        { path:"chrono", component:ChronoComponent },
        { path:"directives", component:ExoDirectivesComponent  },
        { path:"communication", component: ExoParentComponent  },
-       { path:"childText", component: ChildTextComponent}
+       { path:"childText", component: ChildTextComponent},
+       { path:"exoForms", component: ExoFormsComponent}
 
 ]}
 ];

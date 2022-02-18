@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExpressionBinding } from '@angular/compiler';
 import { Exo1Component } from './exo1/exo1.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './exo-routing.module';
 import { ChronoComponent } from './chrono/chrono.component';
 import { ExoComponent } from './exo.component';
@@ -14,18 +14,20 @@ import { ExoEnfantComponent } from './exo-parent/exo-enfant/exo-enfant.component
 import { ExoEnfantDeuxComponent } from './exo-parent/exo-enfant-deux/exo-enfant-deux.component';
 import { ChildTextComponent } from './child-text/child-text.component';
 import { ChildTextDirective } from '../directives/child-text.directive';
+import { ExoFormsComponent } from './exo-forms/exo-forms.component';
 
 
 
 @NgModule({
   declarations: [  
     ChronoComponent, Exo1Component, ExoComponent, ExoDirectivesComponent, ExoParentComponent, ExoEnfantComponent, 
-    ExoEnfantDeuxComponent, ChildTextComponent, ChildTextDirective
+    ExoEnfantDeuxComponent, ChildTextComponent, ChildTextDirective, ExoFormsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ExoRoutingModule
+    ExoRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ExoModule { }
