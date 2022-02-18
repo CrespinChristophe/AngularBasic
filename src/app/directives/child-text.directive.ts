@@ -24,8 +24,9 @@ export class ChildTextDirective implements OnInit{
     msg.innerText = this.message;
     msg.onclick = () => this.createNewChild();
     this.element.nativeElement.appendChild(msg);
-    ++this.compteurEvents;
-    this.emitter.emit(this.compteurEvents);
+    //++this.compteurEvents;
+    this.emitter.emit();
+    //console.log(this.compteurEvents);
      }
   }
 

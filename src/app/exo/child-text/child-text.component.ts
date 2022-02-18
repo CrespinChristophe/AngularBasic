@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child-text',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child-text.component.css']
 })
 export class ChildTextComponent implements OnInit {
-
-  constructor() { }
+compteur: number = 0;
+  constructor(private cdref: ChangeDetectorRef) { } // pour ne pas avoir l'erreur "spéciale" dans la console
 
   ngOnInit(): void {
   }
 
+count(){
+this.compteur++;
+this.cdref.detectChanges();  // pour ne pas avoir l'erreur "spéciale" dans la console
+}
 }
