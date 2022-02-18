@@ -1,12 +1,15 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Directive({
   selector: '[appChildText]'
 })
 export class ChildTextDirective implements OnInit{
-
+  compteurEvents: number = 0;
   @Input('appChildText')
   message = 'Salut'; //ça ne sert à rien de mettre une valeur par défaut
+
+  @Output('appChildNbrEvents')
+  emitter = new EventEmitter<number>();
 
   constructor(private element: ElementRef) { 
     
@@ -14,38 +17,15 @@ export class ChildTextDirective implements OnInit{
 
   ngOnInit(): void {
     this.createNewChild();
-  
-    /*const child = document.createElement('p');
-
-    child.innerText = this.text ? this.text : 'bonjour';
-    child.onclick = () => console.log("bonjour");
-        
-    this.message.nativeElement.appendChild(child);*/
-   
-   /*const msg = document.createElement("p");
-   msg.innerText = this.message;
-   this.element.nativeElement.appendChild(msg);
-   msg.onclick = () => { let msg2 = document.createElement("p");*/
-   /*document.createElement("br");*/
-   /*msg2.innerText = this.message;
-   this.element.nativeElement.appendChild(msg2);*/
-   /*console.log('on passe');*/
-  
-  }
+      }
 
   createNewChild() {
     const msg = document.createElement("p");
     msg.innerText = this.message;
     msg.onclick = () => this.createNewChild();
     this.element.nativeElement.appendChild(msg);
+    ++this.compteurEvents;
+    this.emitter.emit(this.compteurEvents);
      }
-
-  /*createNewChild() {
-   const msg = document.createElement("p");
-   msg.innerText = this.message;
-   msg.onclick = () => this.createNewChild();
-   this.element.nativeElement.appendChild(msg);
-  }*/
-
-}
+  }
 
