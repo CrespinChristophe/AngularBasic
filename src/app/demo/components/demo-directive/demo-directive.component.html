@@ -1,0 +1,63 @@
+<div id="explore-directives-card">
+    <h2>Directives Concepts</h2>
+
+    <h3>Component Directives</h3>
+    <h4>ngStyle</h4>
+    <div>
+        <span [ngStyle]="{ 'color': color, 'background-color': bgColor}">Text in color - background in bgColor</span>
+    </div>
+
+    <div>
+        <input type="radio" name="color" value="black" [(ngModel)]="color">Black
+        <input type="radio" name="color" value="white" [(ngModel)]="color">White
+    </div>
+
+    <div>
+        <input type="radio" name="bg-color" value="darkred" [(ngModel)]="bgColor">Darkred
+        <input type="radio" name="bg-color" value="darkblue" [(ngModel)]="bgColor">Darkblue
+    </div>
+
+    <h4>ngClass</h4>
+    <div>
+        <p [ngClass]="{ 'negative': numberInput < 0, 'too-big': numberInput < -2 }">ngClass : Color Swap</p>
+    </div>
+
+    <input type="number" [(ngModel)]="numberInput">
+    <legend>Above text in bold red if number is negative.</legend>
+    <legend>Above text in italic darkgolden if number is smaller than -2.</legend>
+
+    <h4>ngModel</h4>
+
+    <p>We've already seen this.</p>
+
+    <h3>Structural Directives</h3>
+    <h4>ngIf</h4>
+    <button (click)="toggleDisplay()">{{ displayed ? 'Hide' : 'Display' }}</button>
+
+    <div *ngIf="displayed; else div_container" >
+        <p>Secret</p>
+    </div>
+
+    <ng-template #div_container>
+        <div>
+            <p>Else</p>
+        </div>
+    </ng-template>
+
+    <div [hidden]="!displayed" >
+        <p>Secret</p>
+    </div>
+
+    <h4>ngFor</h4>
+    <ul>
+        <li *ngFor="let fruit of Fruits; let i = index">{{ i+1 }}) {{ fruit }}</li>
+    </ul>
+
+    <h4>ngSwitch</h4>
+    <div [ngSwitch]="color">
+        <div *ngSwitchCase="'black'">Color is black.</div>
+        <div *ngSwitchCase="'white'">Color is white.</div>
+        <div *ngSwitchDefault>None</div>
+    </div>
+
+</div>

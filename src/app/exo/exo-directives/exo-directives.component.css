@@ -1,0 +1,13 @@
+.pas_en_vente {
+    color:red;
+}
+
+.en_vente {
+    color: black;
+}
+
+.bla {
+    border-top: 1ch;
+    
+    border: 5px;
+}

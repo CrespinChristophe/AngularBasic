@@ -1,0 +1,9 @@
+.negative {
+    color:rgb(226, 17, 17);
+    font-weight: bold;
+}
+
+.too-big {
+    color: darkgoldenrod;
+    font-style: italic;
+}

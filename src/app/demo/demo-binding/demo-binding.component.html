@@ -1,0 +1,26 @@
+
+<h1>Le binding</h1>
+
+<h3>One-Way Binding </h3>
+
+<p>Bonjour {{ nomUser }}</p>
+
+<h3>One-Way Binding d'attribut</h3>
+
+<p [class] = "color" (mouseenter)="swapColor()">Le texte est en {{ color }}</p>
+
+<h3>Two-Way Binding</h3>
+
+<p><span class="red">ATTENTION :</span> IMPORT FormsModule</p>
+
+<select [(ngModel)]="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+</select>
+
+<h3>Binding d'évènements</h3>    
+
+<button (click)="onClick($event)">click me !!!!</button> $event pour recup les infos qui passent générée par les evenements
+
+<button (click)="alertThenRedirect()">alert then redirect</button>
+

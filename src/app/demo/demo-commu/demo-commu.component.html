@@ -1,0 +1,7 @@
+<div id="explore-commu-card">
+    <h2 [ngStyle]="{ color: colorParent }">Parents-Children Communication</h2>
+<input type="text" [(ngModel)]="info">
+<app-demo-commu-children [prend-info-stp]="info" (change-color)="onColorChange($event)">
+
+</app-demo-commu-children>
+</div>

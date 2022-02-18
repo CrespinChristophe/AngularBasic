@@ -1,0 +1,8 @@
+<p>Les pipes</p>
+
+<p>Les pipes permettent de transformer 1 info en une autre dans le template</p>
+
+<p>par ex 3 dollars <span> {{ (3.54544564 | currency : 'EUR':false) | json }}</span></p>
+
+<p> {{ voiture | voitureFormat:(voiture.puissance >= 60)  }} </p>// dans les params ont peut faire des calculs
+<p> {{ voiture | voitureFormat }} </p>
