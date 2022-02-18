@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Produit } from 'src/app/models/Produit.models';
-//import { Produit } from 'src/app/models/produit.models';
+import { Produit } from 'src/app/models/produit.models';
+
 
 @Component({
   selector: 'app-exo-directives',

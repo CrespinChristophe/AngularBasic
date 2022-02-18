@@ -8,8 +8,10 @@ import { DemoBindingComponent } from './demo/demo-binding/demo-binding.component
 import { Exo1Component } from './exo/exo1/exo1.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { Page404Component } from './components/page404/page404.component';
-import { VoitureFormatPipe } from './shared/pipes/voiture-format.pipe';
+//import { VoitureFormatPipe } from './shared/pipes/voiture-format.pipe';
 import { DemoComponent } from './demo/demo.component';
+import { ChildTextDirective } from './directives/child-text.directive';
+//import { ChildTextDirective } from './child-text.directive';
 
 
 @NgModule({
