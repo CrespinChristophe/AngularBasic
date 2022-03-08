@@ -6,7 +6,7 @@ import { User } from '../models/user.model';
 })
 export class ConnexionService {
 
-  private isConnected = false;
+  private _isConnected = false;
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class ConnexionService {
   public connect(credentials: User): boolean {
     
     if(credentials.username === 'user' && credentials.password === 'pass')
-     this.isConnected = true;
+     this._isConnected = true;
      return true;
 
      return false;
@@ -28,7 +28,7 @@ export class ConnexionService {
 public disconnect(): boolean {
 
   if(this.isConnected){
-    this.isConnected = false;
+    this._isConnected = false;
     return true;
   }
   return false;
