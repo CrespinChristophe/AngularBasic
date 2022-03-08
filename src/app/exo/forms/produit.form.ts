@@ -30,7 +30,7 @@ export function priceDoubleStock(control: AbstractControl) : ValidationErrors | 
         priceDoubleStock: {
             prix: prix,
             stock: stock,
-            message: 'le prix doit être au moins le double du stock'
+            message: 'le prix doit être au moins le double du stock...'
         }
     }
 }
