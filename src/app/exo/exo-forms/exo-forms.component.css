@@ -1,5 +1,5 @@
 form{
-    background-color: rgb(141, 235, 141);
+    background-color: rgb(243, 20, 20);
 }
 
 .ng-untouched{
@@ -15,8 +15,12 @@ form{
 
 }
 
-
-
-#input-produit.ng-dirty{
-    background-color: blue;
+form .ng-invalid{ /* si les enfants de form sont ng-invalid */
+    border-color: red;
 }
+
+
+
+/*#input-produit.ng-dirty{
+    background-color: blue;
+}*/

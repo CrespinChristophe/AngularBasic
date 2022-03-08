@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Produit } from 'src/app/models/produit.models';
+import { priceDoubleStock, PRODUIT_INSERT_FORM } from '../forms/produit.form';
 
 @Component({
   selector: 'app-exo-forms',
@@ -8,21 +10,45 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ExoFormsComponent implements OnInit {
 
-  form = new FormGroup({
-    'Produit': new FormControl(),
-    'Prix': new FormControl()
-  });
+  @Output('produit-submitted')
+  produitSubmitted = new EventEmitter<Produit>()
 
-  constructor() { }
+
+    form: FormGroup;
+  /*form = new FormGroup({
+    //'produit': new FormControl(),
+    'marque :': new FormControl(),
+    'prix': new FormControl(),
+    'modele': new FormControl(),
+    'stock': new FormControl()
+    
+  });*/
+
+  constructor(builder : FormBuilder) {
+    this.form = builder.group(PRODUIT_INSERT_FORM, {
+      validators: priceDoubleStock
+    });
+   }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log(this.form);
+  onSubmit(){
+    console.log(this.form)
+    if( this.form.valid ){
+      this.produitSubmitted.emit({
+        'marque': this.form.value.marque,
+        'modele': this.form.value.modele,
+        'prix': this.form.value.prix,
+        'stock': isNaN(this.form.value.stock) ? 1 : this.form.value.stock, 
+        'en_vente': this.form.value.en_vente
+      })
+    }
+    
+  }
   }
 
-}
+
 
 
 

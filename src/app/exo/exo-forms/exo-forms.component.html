@@ -4,10 +4,19 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()"> <!-- ngSubmit se déclenche à chaque fois que le formulaire est envoyé -->
 
-       <div>
+      <!-- <div>
            <label for="input-produit">Produit : </label>
            <input type="text" id="input-produit" formControlName="produit">
-       </div>
+       </div>-->
+
+       <div>
+        <label for="input-marque">Marque : </label>
+        <input type="text" id="input-marque" formControlName="marque">
+        <p *ngIf="form.controls['marque'].errors?.['required']" style="color: red;">
+            requis
+        </p>
+
+    </div>
 
        <div>
            <label for="input-prix">Prix : </label>
@@ -15,6 +24,25 @@
 
        </div>
 
+       <div>
+        <label for="input-modele">Modèle : </label>
+        <input type="text" id="input-modele" formControlName="modele">
+
+    </div>
+
+    <div>
+        <label for="input-stock">Stock : </label>
+        <input type="number" id="input-stock" formControlName="stock">
+        <p *ngIf="form.controls['stock'].errors?.['pair']" style="color: red;">
+            {{ form.controls['stock'].errors?.['pair'].message }}
+        </p>
+
+    </div>
+
    <button type="submit">Envoyer</button>
+
+   <p *ngIf="form.errors?.['priceDoubleStock']" style="color: red;">
+    {{ form.errors?.['priceDoubleStock'].message }}
+</p>
 
 </form>

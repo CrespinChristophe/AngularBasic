@@ -1,0 +1,6 @@
+
+/* ou input.ng-touched */
+
+form .ng-touched{ 
+    background-color: aqua;
+}
